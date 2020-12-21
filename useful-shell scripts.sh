@@ -12,3 +12,5 @@ jinfo -flag HeapDumpPath=/elab/spring-boot/logs/dump_file 18881
 jinfo -flag HeapDumpPath 18881
 #View the current JVM configuration in application
 jinfo -flags 18881
+#
+ awk -F, '{print $2}' test.txt | xargs -n7 | awk '{a1+=$1;a2+=$2;a3+=$3;a4+=$4;a5+=$5;a6+=$6;a7+=$7}END {print a1,a2,a3,a4,a5,a6,a7}'
