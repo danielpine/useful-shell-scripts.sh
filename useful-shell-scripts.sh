@@ -21,3 +21,9 @@ awk -F, '{print $2}' test.txt | xargs -n7 | awk '{a1+=$1;a2+=$2;a3+=$3;a4+=$4;a5
 touch /data/blank
 ## 2) clear files using command rsync
 rsync --delete-before -d /data/blank /target_dir
+#View linux version
+cat /proc/version
+uname -a
+cat /etc/issue
+cat /etc/redhat-release
+lsb_release -a
