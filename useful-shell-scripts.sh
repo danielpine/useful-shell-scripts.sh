@@ -27,3 +27,5 @@ uname -a
 cat /etc/issue
 cat /etc/redhat-release
 lsb_release -a
+#Statistics the number of occurrences of a specified field in text
+grep -Po "(?<=\"name\": \").*(?=\")" dashboard/data.json | sort | uniq -c | sort -rn
