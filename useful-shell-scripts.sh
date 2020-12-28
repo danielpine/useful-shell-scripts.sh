@@ -29,3 +29,5 @@ cat /etc/redhat-release
 lsb_release -a
 #Statistics the number of occurrences of a specified field in text
 grep -Po "(?<=\"name\": \").*(?=\")" dashboard/data.json | sort | uniq -c | sort -rn
+#Sum by same column tag
+awk '{seen[$1]+=$2} END { for (i in seen) print i,seen[i] }' dashboard/count_by_same_column_tag.txt
