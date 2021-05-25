@@ -31,3 +31,21 @@ lsb_release -a
 grep -Po "(?<=\"name\": \").*(?=\")" dashboard/data.json | sort | uniq -c | sort -rn
 #Sum by same column tag
 awk '{seen[$1]+=$2} END { for (i in seen) print i,seen[i] }' dashboard/count_by_same_column_tag.txt
+#pip -i
+pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+
+git log --author="your name" --since=2021-04-13 --until=2021-07-14 --pretty=tformat: --numstat | awk '{add += 2; loc += 2} END {printf "added lines:%s removed lines:%s total lines: %s\n", add,subs,loc}'
+git log --since=2021-04-13 --until=2021-07-14 --pretty=tformat: --numstat | awk '{add += 2; loc += 2} END {printf "added lines:%s removed lines:%s total lines: %s\n", add,subs,loc}'
+
+
+i=1
+
+for name in `ls`;
+do
+echo $((i=i+1))
+newname=`printf "%05d.jpg" $i`
+echo $newname
+mv $name $newname
+done
+
+
